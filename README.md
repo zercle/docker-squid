@@ -11,3 +11,13 @@ Docker container image for Squid proxy server
 [![GitHub stars](https://img.shields.io/github/stars/zercle/docker-squid.svg "GitHub stars")](https://github.com/zercle/docker-squid)
 
 Based on the [Official Debian Docker image](https://hub.docker.com/r/_/debian/ "official image").
+
+# How to run
+```bash
+docker run -d \
+--restart=always \
+--dns 1.1.1.1 \
+--dns 8.8.8.8 \
+-p 3128:3128 \
+-v /srv/docker/squid/cache:/var/spool/squid \
+zercle/docker-squid
